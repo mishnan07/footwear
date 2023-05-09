@@ -56,12 +56,7 @@
 							<div id="colorlib-logo"><a href="index.html">Footwear</a></div>
 						</div>
 						<div class="col-sm-5 col-md-3">
-			            <form action="#" class="search-wrap">
-			               <div class="form-group">
-			                  <input type="search" class="form-control search" placeholder="Search">
-			                  <button class="btn btn-primary submit-search text-center" type="submit"><i class="icon-search"></i></button>
-			               </div>
-			            </form>
+			            
 			         </div>
 		         </div>
 					<div class="row">
@@ -81,8 +76,7 @@
 								<%}%>
 
 								<li><a href="/shop">shop</a></li>
-								<li><a href="">About</a></li>
-								<li><a href="">Contact</a></li>
+							
 								<% if(session!=null){ %>
 
 								<li class="cart"><a href="/cart"><i class="icon-shopping-cart"></i> Cart</a></li>
@@ -133,7 +127,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col">
-						<p class="bread"><span><a href="index.html">Home</a></span> / <span>Product Details</span></p>
+						<p class="bread"><span><a href="/home">Home</a></span> / <span>Product Details</span></p>
 					</div>
 				</div>
 			</div>
@@ -185,38 +179,62 @@
 								<%=ProductDetails.description %>
 							</p>
 							
-						<form action="/addToCart?id=<%=ProductDetails._id  %>" method="post">
-							<div class="input-group mb-4">
-								<!-- <span class="input-group-btn">
-									<button type="button" class="quantity-left-minus btn" data-type="minus"
-										data-field="">
-										<i class="icon-minus2"></i>
-									</button>
-								</span>
-								<input type="text" id="quantity" name="quantity" class="form-control input-number"
-									value="1" min="1" max="100">
-								<span class="input-group-btn ml-1">
-									<button type="button" class="quantity-right-plus btn" data-type="plus"
-										data-field="">
-										<i class="icon-plus2"></i>
-									</button>
-								</span> -->
+						
+
+							
+								<form action="/addToCart?id=<%=ProductDetails._id  %>" method="post">
+									<div class="input-group mb-4">
+								
+									</div>
+									<div class="row">
+										<div class="col-sm-12 text-center">
+
+									<a href="/addToCart?id=<%=ProductDetails._id  %>" ><button type="submit" class="btn btn-primary btn-addtocart" style="background-color: #ff6600; font-size: 18px; padding: 10px 20px;">
+								  <i class="icon-shopping-cart"></i> Add to Cart
+								</button></a>
 							</div>
-							<div class="row">
-								<div class="col-sm-12 text-center">
-									<p class="addtocart"><a href="/addToCart?id=<%=ProductDetails._id  %>"
-											class="btn btn-primary btn-addtocart"><i class="icon-shopping-cart"></i><button type="submit"> Addto Cart</button> </a></p>
-								</div>
-							</div>
-							</form>
-							<form action="/addTowishList?id=<%=ProductDetails._id  %>" method="post">
-							<button type="submit" class="btn btn-primary"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
-								<path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z"/>
-							  </svg><a href="/addTowishList?id=<%=ProductDetails._id  %>"></a>Add to wishlist</button>
-							</form>
+						</div>
+							    </form>
+
+								
+							
+							
+								<style>
+									.btn-heart {
+									  background: linear-gradient(to bottom, #ff5f6d, #ffc371);
+									  border-radius: 20px;
+									  color: #fff;
+									  padding: 10px 20px;
+									  border: none;
+									  cursor: pointer;
+									  transition: all 0.3s ease;
+									}
+									
+									.btn-heart:hover {
+									  transform: translateY(-3px);
+									  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+									}
+									
+									.btn-heart svg {
+									  fill: #fff;
+									  margin-right: 5px;
+									}
+									</style>
+									
+									<form action="/addTowishList?id=<%=ProductDetails._id  %>" method="post">
+									  <button type="submit" class="btn btn-heart">
+										<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
+										  <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z"/>
+										</svg>
+										Add to wishlist
+									  </button>
+									</form>
+									
 						</div>
 					</div>
 				</div>
+
+				
 
 				<div class="row">
 					<div class="col-sm-12">

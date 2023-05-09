@@ -347,8 +347,6 @@ const orderDetails = async(req,res)=>{
         const  orderData = await Order.findOne({_id:id}).populate('item.product');
         const  userData =await userSchema.findOne({_id:userID})
         const L=Number(userData.address.length) 
-        console.log(L,'iiiiiiiiiiiiii');
-        console.log(req.query.id);
         
         res.render('orderDetails',{orderData,userData,id,session:userID,L})
     } catch (error) {
@@ -404,7 +402,7 @@ const orderReturn = async(req,res)=>{
 
 const orderList = async(req,res)=>{
     try {
-        const orderData = await Order.find({}).populate('userId')
+        const orderData = await Order.find({}).populate('userId').sort({ _id: -1 });
         console.log(orderData);
         res.render('orderList',{orderData});
     } catch (error) {

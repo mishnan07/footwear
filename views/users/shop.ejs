@@ -51,12 +51,7 @@
 							<div id="colorlib-logo"><a href="index.html">Footwear</a></div>
 						</div>
 						<div class="col-sm-5 col-md-3">
-			            <form action="#" class="search-wrap">
-			               <div class="form-group">
-			                  <input type="search" class="form-control search" placeholder="Search">
-			                  <button class="btn btn-primary submit-search text-center" type="submit"><i class="icon-search"></i></button>
-			               </div>
-			            </form>
+			            
 			         </div>
 		         </div>
 					<div class="row">
@@ -76,8 +71,7 @@
 								<%}%>
 
 								<li><a href="/shop">shop</a></li>
-								<li><a href="">About</a></li>
-								<li><a href="">Contact</a></li>
+								
 								<% if(session!=null){ %>
 
 								<li class="cart"><a href="/cart"><i class="icon-shopping-cart"></i> Cart</a></li>
@@ -267,37 +261,22 @@
 
 						<div class="row row-pb-md" id="filter">
                             <% productData.forEach((comb)=>{ %>
-
-							<div class="col-lg-4 mb-4 text-center">
-								<div class="product-entry border">
-									<a href="#" class="prod-img">
-                                        <img src="/images/<%=comb.image[0]  %>" class="img-fluid" alt="Free html5 bootstrap 4 template">
+								<div class="col-lg-4 mb-4 text-center">
+								  <div class="product-entry border">
+									<a href="/productDetail?id=<%=comb._id%>" class="prod-img">
+									  <img src="/images/<%=comb.image[0]  %>" class="img-fluid" alt="Free html5 bootstrap 4 template">
 									</a>
 									<div class="desc">
-                                        <h2><a href="/productDetail?id=<%=comb._id%>"><%=comb.productName %></a></h2>
-                                        <h5 style="color:black" class="price">₹<%=comb.price %></h5>
+									  <h2><a href="/productDetail?id=<%=comb._id%>"><%=comb.productName %></a></h2>
+									  <h5 style="color:black" class="price">₹<%=comb.price %></h5>
 									</div>
+								  </div>
 								</div>
-							</div>
-							
-                            <% }); %>
+							  <% }); %>
+							  
 
 						</div>
-						<div class="row">
-							<div class="col-md-12 text-center">
-								<div class="block-27">
-				               <ul>
-					               <li><a href="#"><i class="ion-ios-arrow-back"></i></a></li>
-				                  <li class="active"><span>1</span></li>
-				                  <li><a href="#">2</a></li>
-				                  <li><a href="#">3</a></li>
-				                  <li><a href="#">4</a></li>
-				                  <li><a href="#">5</a></li>
-				                  <li><a href="#"><i class="ion-ios-arrow-forward"></i></a></li>
-				               </ul>
-				            </div>
-							</div>
-						</div>
+						
 					</div>
 				</div>
 			</div>
@@ -397,9 +376,9 @@
 					<div class="col-sm-12 text-center">
 						<p>
 							<span><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved <i class="icon-heart" aria-hidden="true"></i> by 
 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></span> 
-							<span class="block">Demo Images: <a href="http://unsplash.co/" target="_blank">Unsplash</a> , <a href="http://pexels.com/" target="_blank">Pexels.com</a></span>
+							<span class="block">  , <a href="" target="_blank">mishnan c</a></span>
 						</p>
 					</div>
 				</div>

@@ -381,12 +381,12 @@ const addTowishList = async (req, res) => {
         console.log(productData);
         if (WishlistData) {
             const updatecart = await Wishlist.updateOne({ userId: userID }, { $push: { item: [{ product: productData.id }] } })
-            res.redirect('/home')
+            res.redirect('/wishList')
 
         } else {
             console.log("insert new");
             const insetcart = await Wishlist.insertMany({ userId: userID, item: [{ product: productData.id }] })
-            res.redirect('/home')
+            res.redirect('/wishList')
         }
     } catch (error) {
         console.log(error.message);
@@ -413,6 +413,7 @@ const checkout = async (req, res) => {
         const userData = await userSchema.findOne({ _id: userID })
 
         const cartData = await Cart.findOne({ userId: userID }).populate('item.product');
+        if(cartData.item[0]!=null){
         const length = cartData.item.length;
         let sum = 0;
         for (let i = 0; i < length; i++) {
@@ -432,7 +433,10 @@ const checkout = async (req, res) => {
         }
 
         const couponData = await Coupon.find({status:false})
-        res.render('checkout', { userData, arr, cartData, sum, session: userID, couponData })
+        res.render('checkout', { userData, arr, cartData, sum, session: userID, couponData });
+    }else{
+        res.redirect('/home');
+    }
     } catch (error) {
         console.log(error.message);
     }

@@ -49,12 +49,7 @@
 							<div id="colorlib-logo"><a href="index.html">Footwear</a></div>
 						</div>
 						<div class="col-sm-5 col-md-3">
-			            <form action="#" class="search-wrap">
-			               <div class="form-group">
-			                  <input type="search" class="form-control search" placeholder="Search">
-			                  <button class="btn btn-primary submit-search text-center" type="submit"><i class="icon-search"></i></button>
-			               </div>
-			            </form>
+			           
 			         </div>
 		         </div>
 					<div class="row">
@@ -74,8 +69,7 @@
 								<%}%>
 
 								<li><a href="/shop">shop</a></li>
-								<li><a href="">About</a></li>
-								<li><a href="">Contact</a></li>
+								
 								<% if(session!=null){ %>
 
 								<li class="cart"><a href="/cart"><i class="icon-shopping-cart"></i> Cart</a></li>
@@ -256,22 +250,19 @@
 				</div>
 				<div class="row">
 
-					  <% products.slice(0, 4).forEach((comb)=>{ %>
-			
-           
-					<div class="col-lg-3 mb-4 text-center">
-						<div class="product-entry border">
-							<a href="#" class="prod-img">
-								<img src="/images/<%=comb.image[0]  %>" class="img-fluid" alt="Free html5 bootstrap 4 template">
+					<% products.slice(0, 4).forEach((comb)=>{ %>
+						<div class="col-lg-3 mb-4 text-center">
+						  <div class="product-entry border">
+							<a href="/productDetail?id=<%=comb._id%>" class="prod-img">
+							  <img src="/images/<%=comb.image[0]  %>" class="img-fluid" alt="Free html5 bootstrap 4 template">
 							</a>
 							<div class="desc">
-                <h2><a href="/productDetail?id=<%=comb._id%>"><%=comb.productName %></a></h2>
-								<h5 style="color:black" class="price">₹<%=comb.price %></h5>
+							  <h2><a href="/productDetail?id=<%=comb._id%>"><%=comb.productName %></a></h2>
+							  <h5 style="color:black" class="price">₹<%=comb.price %></h5>
 							</div>
+						  </div>
 						</div>
-					</div>
-					
-          <% }); %>
+					  <% }); %>
 					
 					
 					
