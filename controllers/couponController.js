@@ -16,7 +16,6 @@ const { query } = require('express');
 const couponLoad = async (req, res) => {
   try {
     const couponData = await Coupon.find()
-    console.log(couponData);
     res.render('coupon', { couponData })
   } catch (error) {
     console.log(error.message);
