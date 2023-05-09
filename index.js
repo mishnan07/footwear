@@ -1,6 +1,7 @@
 const mongoose=require('mongoose');
 mongoose.set('strictQuery',false)
-mongoose.connect('mongodb://127.0.0.1:27017/user_management_system');
+require('dotenv').config()
+mongoose.connect(process.env.mongodb);
 const path=require("path")
 const nocache = require('nocache')
 const express=require('express');  
