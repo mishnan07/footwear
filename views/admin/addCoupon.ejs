@@ -1,0 +1,422 @@
+<% include('../layouts/header.ejs')%>
+  <h4>Add products</h4>
+
+  <!DOCTYPE html>
+  <html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Forms / Elements - NiceAdmin Bootstrap Template</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Favicons -->
+    <link href="/assets/img/favicon.png" rel="icon">
+    <link href="/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.gstatic.com" rel="preconnect">
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+      rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="/assets/vendor/quill/quill.snow.css" rel="stylesheet">
+    <link href="/assets/vendor/quill/quill.bubble.css" rel="stylesheet">
+    <link href="/assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+    <link href="/assets/vendor/simple-datatables/style.css" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="/assets/css/style.css" rel="stylesheet">
+
+    <!-- =======================================================
+  * Template Name: NiceAdmin
+  * Updated: Mar 09 2023 with Bootstrap v5.2.3
+  * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+  </head>
+
+  <body>
+
+    <!-- ======= Header ======= -->
+    <!-- ======= Header ======= -->
+  <header id="header" class="header fixed-top d-flex align-items-center">
+    <div class="d-flex align-items-center justify-content-between">
+      <a class="logo d-flex align-items-center">
+        <span class="d-none d-lg-block">Footwear</span>
+      </a>
+      <i class="bi bi-list toggle-sidebar-btn"></i>
+    </div>
+    <!-- End Logo -->
+   
+  
+
+      <!-- ======= Sidebar ======= -->
+  <!-- ======= Sidebar ======= -->
+  <aside id="sidebar" class="sidebar">
+
+    <ul class="sidebar-nav" id="sidebar-nav">
+
+      <li class="nav-item">
+        <a class="nav-link " href="/admin/home">
+          <i class="bi bi-grid"></i>
+          <span>Dashboard</span>
+        </a>
+      </li><!-- End Dashboard Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-menu-button-wide"></i><span>Products</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="/admin/products">
+              <i class="bi bi-circle"></i><span>Product list</span>
+            </a>
+          </li>
+          <li>
+            <a href="/admin/add-products">
+              <i class="bi bi-circle"></i><span>Add product</span>
+            </a>
+          </li>
+          <li>
+            <a href="/admin/category">
+              <i class="bi bi-circle"></i><span>Category list</span>
+            </a>
+          </li>
+       
+        </ul>
+      </li><!-- End Components Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-journal-text"></i><span>User</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="/admin/listUser">
+              <i class="bi bi-person"></i><span>User list</span>
+            </a>
+          </li>
+          
+        </ul>
+      </li><!-- End Forms Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#tables-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-layout-text-window-reverse"></i><span>Banner</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="tables-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="/admin/banner">
+              <i class="bi bi-circle"></i><span>Banner list</span>
+            </a>
+          </li>
+          <li>
+            <a href="/admin/addBanner">
+              <i class="bi bi-circle"></i><span>Add Banner</span>
+            </a>
+          </li>
+          
+        </ul>
+      </li><!-- End Tables Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#charts-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-bar-chart"></i><span>Orders</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="charts-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="/admin/orderList">
+              <i class="bi bi-circle"></i><span>orderList</span>
+            </a>
+          </li>
+          
+        </ul>
+      </li><!-- End Charts Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#icons-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-gem"></i><span>Coupons</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="icons-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="/admin/coupon">
+              <i class="bi bi-circle"></i><span>Coupon List</span>
+            </a>
+          </li>
+          <li>
+            <a href="/admin/addCoupon">
+              <i class="bi bi-circle"></i><span>Add Coupon</span>
+            </a>
+          </li>
+         
+        </ul>
+      </li><!-- End Icons Nav -->
+
+
+      
+
+</aside>
+
+
+
+
+
+
+
+
+
+      <nav class="header-nav ms-auto">
+        <ul class="d-flex align-items-center">
+          <li class="nav-item dropdown pe-3">
+            <a class="nav-link nav-profile d-flex align-items-center pe-0" data-bs-toggle="dropdown">
+              <span class="d-none d-md-block dropdown-toggle ps-2">Admin</span>
+            </a>
+  
+            <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+              <li>
+                <a class="dropdown-item d-flex align-items-center" href="/admin/logout">
+                  <i class="bi bi-box-arrow-right"></i>
+                  <span>Sign Out</span>
+                </a>
+              </li>
+            </ul>
+            <!-- End Profile Dropdown Items -->
+          </li>
+          <!-- End Profile Nav -->
+        </ul>
+      </nav>
+
+    </header><!-- End Header -->
+
+    <!-- ======= Sidebar ======= -->
+
+    <main id="main" class="main">
+      <div class="pagetitle">
+        <h1>Add Coupon</h1>
+        <nav>
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a>Data</a></li>
+            <li class="breadcrumb-item">Coupon</li>
+            <li class="breadcrumb-item active">add-Coupon</li>
+          </ol>
+        </nav>
+      </div>
+      <!-- End Page Title -->
+      <section class="section">
+        <div class="row">
+          <div class="col-lg-6"></div>
+
+          <div class="col-lg-12">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Coupon</h5>
+
+                <!-- Floating Labels Form -->
+                <form id="form" class="row g-3" action="" method="post">
+                  <div class="col-md-6">
+                    <div class="form-floating">
+                      <input  type="text" class="form-control" id="couponName" name="couponName"
+                        placeholder="Coupon Name"/>
+                      <label for="productName">Coupon Name</label>
+                      <span class="error text-danger"></span>
+
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-floating">
+                      <input type="text" name="couponCode" class="form-control" id="couponCode"
+                        placeholder="Password" />
+                      <label for="price">Enter Code</label>
+                      <span class="error text-danger"></span>
+
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="col-md-12">
+                      <div class="form-floating">
+                        <input id="startDate" type="date" name="startDate" class="form-control" 
+                          placeholder="Start Date" />
+                        <label for="Quantity">Start Date</label>
+                        <span class="error text-danger"></span>
+
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-floating mb-3">
+                      <input  type="date" name="endDate" id="endDate" class="form-control"
+                        />
+                      <label class="form-label" for="form3Example3c">End Date</label>
+                      <span class="error text-danger"></span>
+
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-floating mb-3">
+                      <input type="text" name="minAmount" id="minAmount" id="form3Example1c" class="form-control"
+                       placeholder="Minimum Amount" />
+                      <label class="form-label" for="form3Example1c">Minimum Amount</label>
+                      <span class="error text-danger"></span>
+
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-floating">
+                      <input type="text" class="form-control" id="minDiscount" name="minDiscount"
+                        placeholder="Quantity"  />
+                      <label for="productName">minDiscount</label>
+                      <span class="error text-danger"></span>
+
+                    </div>
+                  </div>
+
+                  <div class="col-md-12">
+                    <div class="form-floating mb-3">
+                      <input type="text" name="maxDiscount" id="maxDiscount" class="form-control"
+                         placeholder="Max Discount"  />
+                      <label class="form-label" for="form3Example4c">Max Discount</label>
+                      <span class="error text-danger"></span>
+
+                    </div>
+                  </div>
+                  <div class="text-center">
+                    <button type="submit" class="btn btn-primary">
+                      Submit
+                    </button>
+                    <button type="cancel" class="btn btn-secondary">
+                      Cancel
+                    </button>
+                  </div>
+                  <% if(typeof message !=='undefined' ){ %>
+
+                    <p style="
+                      font-size: small;
+                      color: red;
+                      font-family: 'Tilt Warp', cursive;
+                    " class="ms-3">
+                      <%= message %>
+                    </p>
+
+                    <% } %>
+                </form>
+                <!-- End floating Labels Form -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- End #main -->
+
+    <!-- ======= Footer ======= -->
+
+    <!-- Vendor JS Files -->
+    <script src="/assets/vendor/apexcharts/apexcharts.min.js"></script>
+    <script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/vendor/chart.js/chart.umd.js"></script>
+    <script src="/assets/vendor/echarts/echarts.min.js"></script>
+    <script src="/assets/vendor/quill/quill.min.js"></script>
+    <script src="/assets/vendor/simple-datatables/simple-datatables.js"></script>
+    <script src="/assets/vendor/tinymce/tinymce.min.js"></script>
+    <script src="/assets/vendor/php-email-form/validate.js"></script>
+
+    <script>
+      $(document).ready(function() {
+        // add event listener for form submission
+        $("#form").submit(function(event) {
+          // prevent default form submission behavior
+          event.preventDefault();
+    
+          // get form input values
+          var couponName = $("#couponName").val().trim();
+          var couponCode = $("#couponCode").val().trim();
+          var startDate = $("#startDate").val().trim();
+          var endDate = $("#endDate").val().trim();
+          var minAmount = $("#minAmount").val().trim();
+          var minDiscount = $("#minDiscount").val().trim();
+          var maxDiscount = $("#maxDiscount").val().trim();
+    
+          // set error flag and clear any existing error messages
+          var hasError = false;
+          $(".error").text("");
+    
+          // validate coupon name
+          if (couponName == "") {
+            $("#couponName").siblings(".error").text("Please enter a coupon name.");
+            hasError = true;
+          }
+    
+          // validate coupon code
+          if (couponCode == "") {
+            $("#couponCode").siblings(".error").text("Please enter a coupon code.");
+            hasError = true;
+          }
+    
+          // validate start date
+          if (startDate == "") {
+            $("#startDate").siblings(".error").text("Please select a start date.");
+            hasError = true;
+          }
+    
+          // validate end date
+          if (endDate == "") {
+            $("#endDate").siblings(".error").text("Please select an end date.");
+            hasError = true;
+          } else if (endDate < startDate) {
+            $("#endDate").siblings(".error").text("End date must be after start date.");
+            hasError = true;
+          }
+    
+          // validate minimum amount
+          if (minAmount == "") {
+            $("#minAmount").siblings(".error").text("Please enter a minimum amount.");
+            hasError = true;
+          } else if (isNaN(minAmount) || parseFloat(minAmount) <= 0) {
+            $("#minAmount").siblings(".error").text("Minimum amount must be a positive number.");
+            hasError = true;
+          }
+    
+          // validate minimum discount
+          if (minDiscount == "") {
+            $("#minDiscount").siblings(".error").text("Please enter a minimum discount.");
+            hasError = true;
+          } else if (isNaN(minDiscount) || parseFloat(minDiscount) < 0) {
+            $("#minDiscount").siblings(".error").text("Minimum discount must be a non-negative number.");
+            hasError = true;
+          }
+    
+          // validate maximum discount
+          if (maxDiscount == "") {
+            $("#maxDiscount").siblings(".error").text("Please enter a maximum discount.");
+            hasError = true;
+          } else if (isNaN(maxDiscount) || parseFloat(maxDiscount) < parseFloat(minDiscount)) {
+            $("#maxDiscount").siblings(".error").text("Maximum discount must be a number greater than or equal to the minimum discount.");
+            hasError = true;
+          }
+    
+          // if no errors, submit the form
+          if (!hasError) {
+            this.submit();
+          }
+        });
+      });
+    </script>
+    
+    
+    
+
+  </body>
+
+  </html>

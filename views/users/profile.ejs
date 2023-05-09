@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+	<title>Footwear</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="/assets/img/favicon.png" rel="icon">
+  <link href="/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.gstatic.com" rel="preconnect">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="/assets/vendor/quill/quill.snow.css" rel="stylesheet">
+  <link href="/assets/vendor/quill/quill.bubble.css" rel="stylesheet">
+  <link href="/assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="/assets/vendor/simple-datatables/style.css" rel="stylesheet">
+
+        <!-- favicon -->
+        <link rel="shortcut icon" href="img/logos/favicon.png">
+        <link rel="apple-touch-icon" href="img/logos/apple-touch-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="img/logos/apple-touch-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="img/logos/apple-touch-icon-114x114.png">
+      
+        <!-- plugins -->
+        <link rel="stylesheet" href="css/plugins.css">
+      
+        <!-- theme core css -->
+        <link href="css/styles.css" rel="stylesheet">
+   
+     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700" rel="stylesheet">
+     <link href="https://fonts.googleapis.com/css?family=Rokkitt:100,300,400,700" rel="stylesheet">
+     
+     <!-- Animate.css -->
+     <link rel="stylesheet" href="/css/animate.css">
+     <!-- Icomoon Icon Fonts-->
+     <link rel="stylesheet" href="/css/icomoon.css">
+     <!-- Ion Icon Fonts-->
+     <link rel="stylesheet" href="/css/ionicons.min.css">
+     <!-- Bootstrap  -->
+     <link rel="stylesheet" href="/css/bootstrap.min.css">
+   
+     <!-- Magnific Popup -->
+     <link rel="stylesheet" href="/css/magnific-popup.css">
+   
+     <!-- Flexslider  -->
+     <link rel="stylesheet" href="/css/flexslider.css">
+   
+     <!-- Owl Carousel -->
+     <link rel="stylesheet" href="/css/owl.carousel.min.css">
+     <link rel="stylesheet" href="/css/owl.theme.default.min.css">
+     
+     <!-- Date Picker -->
+     <link rel="stylesheet" href="/css/bootstrap-datepicker.css">
+     <!-- Flaticons  -->
+     <link rel="stylesheet" href="/fonts/flaticon/font/flaticon.css">
+   
+     <!-- Theme style  -->
+     <link rel="stylesheet" href="/css/style.css">
+   
+     
+
+  <!-- Template Main CSS File -->
+  <link href="/assets/css/style.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: NiceAdmin
+  * Updated: Mar 09 2023 with Bootstrap v5.2.3
+  * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+
+
+<style>
+  #main {
+    margin-left: 0 !important;
+  }
+
+
+
+  .dashboard .revenue-card .card-icon {
+  color: #2eca6a;
+  background: #e0f8e9;
+}
+</style>
+
+
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <!-- <header id="header" class="header fixed-top d-flex align-items-center">
+
+
+    
+   
+
+
+  </header>End Header -->
+
+
+  <nav class="colorlib-nav" role="navigation">
+    <div class="top-menu">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-7 col-md-9">
+            <div id="colorlib-logo"><a href="index.html">Footwear</a></div>
+          </div>
+          <div class="col-sm-5 col-md-3">
+                <form action="#" class="search-wrap">
+                   <div class="form-group">
+                      <input type="search" class="form-control search" placeholder="Search">
+                      <button class="btn btn-primary submit-search text-center" type="submit"><i class="icon-search"></i></button>
+                   </div>
+                </form>
+             </div>
+           </div>
+        <div class="row">
+          <div class="col-sm-12 text-left menu-1">
+            <ul>
+              <li class="active"><a href="/home">Home</a></li>
+              <% if(session!=null){ %>
+              <li class="has-dropdown">
+                <a href="">My Account</a>
+                <ul class="dropdown">
+                  <li><a href="/profile">My profile</a></li>
+                  <li><a href="/cart">Shopping Cart</a></li>
+                  <li><a href="/myOrders">My Orders</a></li>
+                  <li><a href="/wishList">Wishlist</a></li>
+                </ul>
+              </li>
+              <%}%>
+
+              <li><a href="/shop">shop</a></li>
+              <li><a href="">About</a></li>
+              <li><a href="">Contact</a></li>
+              <% if(session!=null){ %>
+
+              <li class="cart"><a href="/cart"><i class="icon-shopping-cart"></i> Cart</a></li>
+              <%}%>
+
+              
+              <% if(session!=null){ %>
+
+                <li><a href="/logout">Logout</a></li>
+                <% }else{%>
+
+                  <li><a href="/login">Login</a></li>
+                <%}%>
+              
+              
+
+
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="sale">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-8 offset-sm-2 text-center">
+            <div class="row">
+              <div class="owl-carousel2">
+                <div class="item">
+                  <div class="col">
+                    <h3><a href="#">25% off (Almost) Everything! Use Code: Summer Sale</a></h3>
+                  </div>
+                </div>
+                <div class="item">
+                  <div class="col">
+                    <h3><a href="#">Our biggest sale yet 50% off all summer shoes</a></h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+
+ 
+
+
+  <main id="main" class="main">
+
+
+    
+
+    <div class="pagetitle">
+      
+      <h1>Profile</h1>
+      <nav>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item">Users</li>
+          <li class="breadcrumb-item active">Profile</li>
+        </ol>
+      </nav>
+    </div><!-- End Page Title -->
+
+
+    <section class="section profile">
+
+
+
+      
+      <div class="row">
+        <div class="col-xl-2">
+
+        <aside>
+
+          <ul class="sidebar-nav" id="sidebar-nav">
+      
+            <li class="nav-item">
+              <a class="nav-link " href="/myOrders">
+                <i class="bi bi-grid"></i>
+                <span>My Orders</span>
+              </a>
+            </li><!-- End Dashboard Nav -->
+      
+            <li class="nav-item">
+              <a class="nav-link " href="/cart">
+                <i class="bi bi-grid"></i>
+                <span>My Cart</span>
+              </a>
+            </li><!-- End Dashboard Nav -->
+      
+            <li class="nav-item">
+              <a class="nav-link " href="/wishList">
+                <i class="bi bi-grid"></i>
+                <span>My Wishlist</span>
+              </a>
+            </li><!-- End Dashboard Nav -->
+      
+           
+            <div class="col-md-12">
+              <div class="card info-card revenue-card">
+
+               
+
+                <div class="card-body">
+                  <h5 class="card-title">Wallet Balance : </h5>
+
+                  <div class="d-flex align-items-center">
+                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                    </div>
+                    <div class="ps-3">
+                      <h6 id="revenue">
+                        ₹<%=userSearchForVerify.wallet  %>
+                      </h6>
+
+
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div><!-- End Revenue Card -->
+      
+      
+      
+      
+      
+      
+      
+        </aside><!-- End Sidebar-->
+
+        </div>
+        <div class="col-xl-2">
+
+          
+
+          <div class="card">
+             <!-- ======= Sidebar ======= -->
+ 
+
+
+
+            <div class="card-body profile-card pt-4 d-flex flex-column align-items-center">
+
+              
+
+              <% if(image.length==0){ %>
+              <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp" alt="avatar">
+              <% }else{%>
+              <img src="/images/<%= image[0]  %> " alt="Profile" class="rounded-circle">
+              <% } %>
+              <h2><%= name %></h2>
+              <div class="social-links mt-2">
+                <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+                <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+                <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+                <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="col-xl-8">
+
+          <div class="card">
+            <div class="card-body pt-3">
+              <!-- Bordered Tabs -->
+              <ul class="nav nav-tabs nav-tabs-bordered">
+
+                <li class="nav-item">
+                  <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#profile-overview">Overview</button>
+                </li>
+
+                <li class="nav-item">
+                  <button class="nav-link" data-bs-toggle="tab" data-bs-target="#profile-edit">Edit Profile</button>
+                </li>
+
+               
+              </ul>
+              <div class="tab-content pt-2">
+
+                <div class="tab-pane fade show active profile-overview" id="profile-overview">
+                        <h5 class="card-title">Profile Details</h5>
+
+                  <div class="row">
+                    <div class="col-lg-3 col-md-4 label ">Full Name</div>
+                    <div class="col-lg-9 col-md-8"><%= name %></div>
+                  </div>
+
+                  <% if( userSearchForVerify.address.length>0) {%>
+                  <div class="row">
+                    <div class="col-lg-3 col-md-4 label">Address</div>
+                    <div class="col-lg-9 col-md-8"><%= userSearchForVerify.address[0].street %>, <%= userSearchForVerify.address[0].city %>, <%= userSearchForVerify.address[0].state %>, <%= userSearchForVerify.address[0].zipCode %></div>
+                  </div>
+
+                  <% } %>
+                  <div class="row">
+                    <div class="col-lg-3 col-md-4 label">Phone</div>
+                    <div class="col-lg-9 col-md-8"> <%= mobile %></div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-lg-3 col-md-4 label">Email</div>
+                    <div class="col-lg-9 col-md-8"> <%= email %></div>
+                  </div>
+
+                </div>
+
+                <div class="tab-pane fade profile-edit pt-3" id="profile-edit">
+                  <!-- Profile Edit Form -->
+                  <form action="/editProfile?id=<%=userSearchForVerify._id %>" method="post"
+                    enctype="multipart/form-data">
+                    <div class="row mb-3">
+                      <div>
+                        <label class="form-label" for="basic-default-message">Image</label>
+                        <input id="image-input" type="file" multiple name="image" style="border: 1px solid #000;"
+                          accept=".jpg, .jpeg, .png, .gif, .webp">
+                        <div id="image-preview-container"></div>
+                        <div id="imageError" class="error-message" style="color: red;"></div>
+
+                      </div>
+                      <div class="col-md-8 col-lg-9">
+                        <div class="pt-2">
+                          <!-- <a href="" class="btn btn-primary btn-sm" title="Upload new profile image"><i class="bi bi-upload"></i></a>
+                          <a href="" class="btn btn-danger btn-sm" title="Remove my profile image"><i class="bi bi-trash"></i></a> -->
+                        </div>
+                      </div>
+                    </div>
+
+
+
+                    <div class="row mb-3">
+                      <label for="fullName" class="col-md-4 col-lg-3 col-form-label">Full Name</label>
+                      <div class="col-md-8 col-lg-9">
+                        <input name="NAME" type="text" class="form-control" id="Name" value="<%= name  %>">
+                      </div>
+                    </div>
+                    <div class="row mb-3">
+                      <label for="Phone" class="col-md-4 col-lg-3 col-form-label">Phone</label>
+                      <div class="col-md-8 col-lg-9">
+                        <input name="MOBILE" type="text" class="form-control" id="Mobile" value="<%= mobile  %>">
+                      </div>
+                    </div>
+
+                    <div class="row mb-3">
+                      <label for="Email" class="col-md-4 col-lg-3 col-form-label">Email</label>
+                      <div class="col-md-8 col-lg-9">
+                        <input name="EMAIL" type="email" class="form-control" id="Email" value="<%= email %>">
+                      </div>
+                    </div>
+
+                   
+                    <div class="text-center">
+                      <button type="submit" class="btn btn-primary">Save Changes</button>
+                    </div>
+                  </form><!-- End Profile Edit Form -->
+
+      <div style="height: 30px;width: 50px;"></div>
+
+      <h4>Add Address</h4>
+                  <form action="/addAddress" method="post">
+                    <div class="row mb-3">
+                      <label for="street" class="col-md-4 col-lg-3 col-form-label">street</label>
+                      <div class="col-md-8 col-lg-9">
+                        <input name="street" type="text" class="form-control" id="street"   %>">
+                      </div>
+                    </div>
+
+                    <div class="row mb-3">
+                      <label for="city" class="col-md-4 col-lg-3 col-form-label">city</label>
+                      <div class="col-md-8 col-lg-9">
+                        <input name="city" type="text" class="form-control" id="city" >
+                      </div>
+                    </div>
+
+                    <div class="row mb-3">
+                      <label for="state" class="col-md-4 col-lg-3 col-form-label">state</label>
+                      <div class="col-md-8 col-lg-9">
+                        <input name="state" type="text" class="form-control" id="state" >
+                      </div>
+                    </div>
+
+                    <div class="row mb-3">
+                      <label for="zipCode" class="col-md-4 col-lg-3 col-form-label">Phone</label>
+                      <div class="col-md-8 col-lg-9">
+                        <input name="zipCode" type="text" class="form-control" id="zipCode" >
+                      </div>
+                    </div>
+
+                  <div class="text-center">
+                    <button type="submit" class="btn btn-primary">Save </button>
+                  </div>
+
+                </form>
+               <% if(userSearchForVerify.address.length<0){%> 
+                <% for (let i = 0; i < 4; i++) { %>
+                  <div class="row mb-3">
+                    <label for="ADDRESS_<%= i %>" class="col-md-4 col-lg-3 col-form-label">Address <%= i+1 %></label>
+                    <div class="col-md-8 col-lg-9">
+                      <input name="address_<%= i %>" type="text" class="form-control" id="ADDRESS_<%= i %>"
+                        value="<%= userSearchForVerify.address[i].street %>, <%= userSearchForVerify.address[i].city %>, <%= userSearchForVerify.address[i].state %>, <%= userSearchForVerify.address[i].zipCode %>">
+                    </div>
+                  </div>
+                <% }} %>
+
+
+                </div>
+
+                
+
+
+               
+
+              </div>
+
+
+                
+
+
+              </div><!-- End Bordered Tabs -->
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="colorlib-footer" role="contentinfo">
+    <div class="container">
+      <div class="row row-pb-md">
+        <div class="col footer-col colorlib-widget">
+          <h4>About Footwear</h4>
+          <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life</p>
+          <p>
+            <ul class="colorlib-social-icons">
+              <li><a href="#"><i class="icon-twitter"></i></a></li>
+              <li><a href="#"><i class="icon-facebook"></i></a></li>
+              <li><a href="#"><i class="icon-linkedin"></i></a></li>
+              <li><a href="#"><i class="icon-dribbble"></i></a></li>
+            </ul>
+          </p>
+        </div>
+        <div class="col footer-col colorlib-widget">
+          <h4>Customer Care</h4>
+          <p>
+            <ul class="colorlib-footer-links">
+              <li><a href="#">Contact</a></li>
+              <li><a href="#">Returns/Exchange</a></li>
+              <li><a href="#">Gift Voucher</a></li>
+              <li><a href="/wishList">Wishlist</a></li>
+              <li><a href="#">Special</a></li>
+              <li><a href="#">Customer Services</a></li>
+              <li><a href="#">Site maps</a></li>
+            </ul>
+          </p>
+        </div>
+        <div class="col footer-col colorlib-widget">
+          <h4>Information</h4>
+          <p>
+            <ul class="colorlib-footer-links">
+              <li><a href="#">About us</a></li>
+              <li><a href="#">Delivery Information</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Support</a></li>
+              <li><a href="#">Order Tracking</a></li>
+            </ul>
+          </p>
+        </div>
+
+        <div class="col footer-col">
+          <h4>News</h4>
+          <ul class="colorlib-footer-links">
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="#">Press</a></li>
+            <li><a href="#">Exhibitions</a></li>
+          </ul>
+        </div>
+
+        <div class="col footer-col">
+          <h4>Contact Information</h4>
+          <ul class="colorlib-footer-links">
+            <li>291 South 21th Street, <br> Suite 721 New York NY 10016</li>
+            <li><a href="tel://1234567920">+ 1235 2355 98</a></li>
+            <li><a href="mailto:info@yoursite.com">info@yoursite.com</a></li>
+            <li><a href="#">yoursite.com</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+   
+  </footer>
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <script src="/assets/vendor/apexcharts/apexcharts.min.js"></script>
+  <script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/assets/vendor/chart.js/chart.umd.js"></script>
+  <script src="/assets/vendor/echarts/echarts.min.js"></script>
+  <script src="/assets/vendor/quill/quill.min.js"></script>
+  <script src="/assets/vendor/simple-datatables/simple-datatables.js"></script>
+  <script src="/assets/vendor/tinymce/tinymce.min.js"></script>
+  <script src="/assets/vendor/php-email-form/validate.js"></script> 
+
+  <script src="/assets/js/main.js"></script>
+  
+	<!-- jQuery -->
+	<script src="/js/jquery.min.js"></script>
+  <!-- popper -->
+  <script src="/js/popper.min.js"></script>
+  <!-- bootstrap 4.1 -->
+  <script src="/js/bootstrap.min.js"></script>
+  <!-- jQuery easing -->
+  <script src="/js/jquery.easing.1.3.js"></script>
+ <!-- Waypoints -->
+ <script src="/js/jquery.waypoints.min.js"></script>
+ <!-- Flexslider -->
+ <script src="/js/jquery.flexslider-min.js"></script>
+ <!-- Owl carousel -->
+ <script src="/js/owl.carousel.min.js"></script>
+ <!-- Magnific Popup -->
+ <script src="/js/jquery.magnific-popup.min.js"></script>
+ <script src="/js/magnific-popup-options.js"></script>
+ <!-- Date Picker -->
+ <script src="/js/bootstrap-datepicker.js"></script>
+ <!-- Stellar Parallax -->
+ <script src="/js/jquery.stellar.min.js"></script>
+ <!-- Main -->
+ <script src="/js/main.js"></script>
+
+
+
+</body>
+
+</html>

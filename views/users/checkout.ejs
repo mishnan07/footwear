@@ -1,0 +1,699 @@
+<% include('../layouts/header.ejs') %>
+
+
+	<!DOCTYPE HTML>
+	<html>
+
+	<head>
+		<title>Footwear</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+		<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Rokkitt:100,300,400,700" rel="stylesheet">
+
+		<!-- Animate.css -->
+		<link rel="stylesheet" href="css/animate.css">
+		<!-- Icomoon Icon Fonts-->
+		<link rel="stylesheet" href="css/icomoon.css">
+		<!-- Ion Icon Fonts-->
+		<link rel="stylesheet" href="css/ionicons.min.css">
+		<!-- Bootstrap  -->
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+
+		<!-- Magnific Popup -->
+		<link rel="stylesheet" href="css/magnific-popup.css">
+
+		<!-- Flexslider  -->
+		<link rel="stylesheet" href="css/flexslider.css">
+
+		<!-- Owl Carousel -->
+		<link rel="stylesheet" href="css/owl.carousel.min.css">
+		<link rel="stylesheet" href="css/owl.theme.default.min.css">
+
+		<!-- Date Picker -->
+		<link rel="stylesheet" href="css/bootstrap-datepicker.css">
+		<!-- Flaticons  -->
+		<link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
+
+		<!-- Theme style  -->
+		<link rel="stylesheet" href="css/style.css">
+
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.0/dist/sweetalert2.min.css">
+		<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.0/dist/sweetalert2.all.min.js"></script>
+
+
+	</head>
+
+	<body>
+
+		<div class="colorlib-loader"></div>
+
+		<div id="page">
+			<nav class="colorlib-nav" role="navigation">
+				<div class="top-menu">
+					<div class="container">
+						<div class="row">
+							<div class="col-sm-7 col-md-9">
+								<div id="colorlib-logo"><a href="index.html">Footwear</a></div>
+							</div>
+							<div class="col-sm-5 col-md-3">
+								<form action="#" class="search-wrap">
+									<div class="form-group">
+										<input type="search" class="form-control search" placeholder="Search">
+										<button class="btn btn-primary submit-search text-center" type="submit"><i
+												class="icon-search"></i></button>
+									</div>
+								</form>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-sm-12 text-left menu-1">
+								<ul>
+									<li class="active"><a href="/home">Home</a></li>
+									<% if(session!=null){ %>
+										<li class="has-dropdown">
+											<a href="">My Account</a>
+											<ul class="dropdown">
+												<li><a href="/profile">My profile</a></li>
+												<li><a href="/cart">Shopping Cart</a></li>
+												<li><a href="/myOrders">My Orders</a></li>
+												<li><a href="/wishList">Wishlist</a></li>
+											</ul>
+										</li>
+										<%}%>
+
+											<li><a href="/shop">shop</a></li>
+											<li><a href="">About</a></li>
+											<li><a href="">Contact</a></li>
+											<% if(session!=null){ %>
+
+												<li class="cart"><a href="/cart"><i class="icon-shopping-cart"></i>
+														Cart</a></li>
+												<%}%>
+
+
+													<% if(session!=null){ %>
+
+														<li><a href="/logout">Logout</a></li>
+														<% }else{%>
+
+															<li><a href="/login">Login</a></li>
+															<%}%>
+
+
+
+
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="sale">
+					<div class="container">
+						<div class="row">
+							<div class="col-sm-8 offset-sm-2 text-center">
+								<div class="row">
+									<div class="owl-carousel2">
+										<div class="item">
+											<div class="col">
+												<h3><a href="#">25% off (Almost) Everything! Use Code: Summer Sale</a>
+												</h3>
+											</div>
+										</div>
+										<div class="item">
+											<div class="col">
+												<h3><a href="#">Our biggest sale yet 50% off all summer shoes</a></h3>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</nav>
+
+
+			<div class="breadcrumbs">
+				<div class="container">
+					<div class="row">
+						<div class="col">
+							<p class="bread"><span><a href="index.html">Home</a></span> / <span>Checkout</span></p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="colorlib-product" style="background:linear-gradient(3deg, #f4f4f4 30%, #f4f4f4 30%, #f4f4f4)">
+				<div class="container">
+					<div class="row row-pb-lg">
+						<div class="col-sm-10 offset-md-1">
+							<div class="process-wrap">
+								<div class="process text-center active">
+									<p><span>01</span></p>
+									<h3>Shopping Cart</h3>
+								</div>
+								<div class="process text-center active">
+									<p><span>02</span></p>
+									<h3>Checkout</h3>
+								</div>
+								<div class="process text-center">
+									<p><span>03</span></p>
+									<h3>Order Complete</h3>
+								</div>
+							</div>
+						</div>
+					</div>
+
+
+
+					<h4>Add Address</h4>
+					<div class="row mb-3">
+						<label for="street" class="col-md-4 col-lg-3 col-form-label">street</label>
+						<div class="col-md-8 col-lg-9">
+							<input name="street" type="text" class="form-control" id="street" %>">
+						</div>
+					</div>
+
+					<div class="row mb-3">
+						<label for="city" class="col-md-4 col-lg-3 col-form-label">city</label>
+						<div class="col-md-8 col-lg-9">
+							<input name="city" type="text" class="form-control" id="city">
+						</div>
+					</div>
+
+					<div class="row mb-3">
+						<label for="state" class="col-md-4 col-lg-3 col-form-label">state</label>
+						<div class="col-md-8 col-lg-9">
+							<input name="state" type="text" class="form-control" id="state">
+						</div>
+					</div>
+
+					<div class="row mb-3">
+						<label for="zipCode" class="col-md-4 col-lg-3 col-form-label">Zip code</label>
+						<div class="col-md-8 col-lg-9">
+							<input name="zipCode" type="text" class="form-control" id="zipCode">
+						</div>
+					</div>
+
+					<div class="text-center">
+						<button onclick="addAddress()" type="button" class="btn btn-primary">Save </button>
+					</div>
+
+
+					<div class="col-md-12">
+						<div class="form-group">
+							<label for="country">Select Address</label>
+							<div class="form-field">
+								<i class="icon icon-arrow-down3"></i>
+								<select id="address" class="form-control" onchange="addSelect()">
+									<% for (let i=0; i < userData.address.length; i++) { %>
+										<option
+											value="<%= userData.address[i].street %>, <%= userData.address[i].city %>, <%= userData.address[i].state %>, <%= userData.address[i].zipCode %>">
+											<%= arr[i] %>
+										</option>
+										<% } %>
+								</select>
+
+
+							</div>
+						</div>
+					</div>
+					
+
+
+					<div class="modal fade " id="exampleModalLong" tabindex="-1" role="dialog"
+                                aria-labelledby="exampleModalLongTitle" aria-hidden="true" style="margin-top: 75px;">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header bg-danger">
+
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <% if(couponData.length>0){ %>
+                                            <% for(let i=0;i<couponData.length;i++){ %>
+                                                <div class="modal-body bg-primary">
+                                                    <div class="container " id="coupon-container">
+
+                                                        <div class="card-coupon">
+                                                            <div class="main">
+                                                                <div class="co-img">
+                                                                    <img src="img/logo.jpg" alt="" />
+                                                                </div>
+
+                                                                <div class="vertical"></div>
+
+                                                                <div class="content">
+                                                                    <h5>
+                                                                        <%= couponData[i].couponName %>
+                                                                    </h5>
+                                                                    <h5>Code:<%= couponData[i].couponCode %>
+                                                                    </h5>
+                                                                    <h5>Valid till: <%= couponData[i].couponData %>
+                                                                    </h5>
+                                                                    <h6>
+                                                                        <%= couponData[i].minDiscount %>% - <%=
+                                                                                couponData[i].maxDiscount %>%<span>on
+                                                                                    minimum
+                                                                                    <%= couponData[i].minAmount %> 
+                                                                                </span>
+                                                                    </h6>
+
+                                                                </div>
+                                                            </div>
+                                                            <div class="copy-button">
+                                                                <input id="copyvalue" type="text" readonly
+                                                                    value="<%= couponData[i].couponCode %>" />
+                                                                <button onclick="copyIt()" class="copybtn">COPY</button>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+
+                                                </div>
+
+                                                <%} %>
+                                                    <%}else{ %>
+                                                        <h2 style="text-align: center;">NO COUPON AVAILABLE</h2>
+                                                        <% } %>
+
+                                    </div>
+                                </div>
+                            </div>
+							<button type="button" class="site-btn bg-white" data-toggle="modal"
+                                                    data-target="#exampleModalLong">AVAILABLE COUPON</button>
+
+
+
+
+
+
+
+					<div class="col-sm-8 mt-3">
+
+						<div class="col-sm-9">
+							<input type="text" name="coupon" id="coupon" class="form-control input-number"
+								placeholder="Your Coupon Number...">
+						</div>
+						<div class="col-sm-3 mt-3">
+							<button id="apply" type="submit" onclick="updateDiscount()">apply Coupon</button>
+						</div>
+					</div>
+
+
+
+
+					<div class="row">
+						<div class="col-lg-8">
+							<form action="/placeOrder" method="post">
+								<h2>Billing Details</h2>
+								<div class="row">
+
+									<div class="col-md-12">
+										<div class="form-group">
+											<label for="companyname">Name</label>
+
+											<input type="text" id="name" class="form-control" value="<%=userData.name%>"
+												placeholder="name">
+										</div>
+									</div>
+
+
+
+									<div class="col-md-12">
+										<div class="form-group">
+											<label for="fname">Address</label>
+											<input value="" name="address" id="address_" class="form-control">
+
+										</div>
+										<!-- <div class="form-group">
+			                    	<input type="text" id="address2" class="form-control" placeholder="Second Address">
+			                  </div> -->
+									</div>
+
+
+
+
+
+									<div class="col-md-6">
+										<div class="form-group">
+											<label for="email">Email</label>
+											<input type="text" id="email" class="form-control"
+												value="<%=userData.email%>" name="email" placeholder="State Province">
+										</div>
+									</div>
+									<div class="col-md-6">
+										<div class="form-group">
+											<label for="Phone">Phone</label>
+											<input type="text" id="zippostalcode" class="form-control"
+												value="<%=userData.mobile%>" name="mobile" placeholder="">
+										</div>
+									</div>
+
+									<div class="col-md-12">
+										<div class="form-group">
+											<div class="radio">
+												<label><input type="radio" name="optradio"> </label>
+												<label><input type="radio" name="optradio"> </label>
+											</div>
+										</div>
+									</div>
+
+
+
+
+
+								</div>
+
+						</div>
+
+
+
+						<div class="col-lg-4">
+							<div class="row">
+								<div class="col-md-12">
+									<div class="form-group">
+										<h2>Cart Total</h2>
+										<ul>
+											<li>
+												<ul>
+													<% for (var i=0; i < cartData.item.length; i++) { %>
+														<li>
+															<span name="productName"><%- cartData.item[i].quantity %> x
+																	<%- cartData.item[i].product.productName %></span>
+															<span total>₹<%- cartData.item[i].total %></span>
+														</li>
+														<% } %>
+												</ul>
+
+
+											</li>
+											<li>
+												<span name="subtotal" style="color: brown;">Subtotal</span> <span
+													id="grandTotal" style="color: brown;"><%- sum %></span>
+
+											</li>
+											<li>
+												<input type="hidden" name="offer" id="offer" value="<%=0.00%>">
+												<span style="color: rgb(109, 160, 26);">Discount</span> <span id="don"
+													name="don" style="color:  rgb(109, 160, 26)cccc;">
+													<%=0.00%>
+												</span>
+
+											</li>
+											<li>
+												<input type="hidden" name="aTotal" id="aTotal" value="<%- sum %>">
+												<span style="color: rgb(109, 160, 26);">Total</span> <span id="allTotal"
+													name="allTotal"
+													style="color:  rgb(109, 160, 26)cccc;"><%-sum%></span>
+
+											</li>
+											<li>
+												<span name="subtotal" style="color: rgb(109, 160, 26);">Wallet
+													Balance</span> <span style="color:  rgb(109, 160, 26)cccc;">₹
+													<%=userData.wallet%></span>
+
+											</li>
+										</ul>
+									</div>
+								</div>
+								
+
+								<div class="w-100"></div>
+
+								<div class="col-md-12">
+									<div class="cart-detail">
+										<h2>Payment Method</h2>
+										<% if(userData.wallet>=sum){ %>
+											<div class="form-group">
+												<div class="col-md-12">
+													<div class="radio">
+														<label><input type="radio" name="optradio" value="wallet"
+																required> wallet</label>
+													</div>
+												</div>
+											</div>
+											<% } %>
+												<div class="form-group">
+													<div class="col-md-12">
+														<div class="radio">
+															<label><input type="radio" name="optradio"
+																	value="Cash On Delivery" required> Cash On
+																Delivery</label>
+														</div>
+													</div>
+												</div>
+												<div class="form-group">
+													<div class="col-md-12">
+														<div class="radio">
+															<label><input type="radio" name="optradio" value="Paypal"
+																	required> Paypal</label>
+														</div>
+													</div>
+												</div>
+												<div class="form-group">
+													<div class="col-md-12">
+														<div class="checkbox">
+															<label><input type="checkbox" value=""> I have read and
+																accept the terms and conditions</label>
+														</div>
+													</div>
+												</div>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-12 text-center">
+									<button type="submit">Place order</button>
+									</form>
+
+								</div>
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+
+
+			<footer id="colorlib-footer" role="contentinfo">
+				<div class="container">
+					<div class="row row-pb-md">
+						<div class="col footer-col colorlib-widget">
+							<h4>About Footwear</h4>
+							<p>Even the all-powerful Pointing has no control about the blind texts it is an almost
+								unorthographic life</p>
+							<p>
+							<ul class="colorlib-social-icons">
+								<li><a href="#"><i class="icon-twitter"></i></a></li>
+								<li><a href="#"><i class="icon-facebook"></i></a></li>
+								<li><a href="#"><i class="icon-linkedin"></i></a></li>
+								<li><a href="#"><i class="icon-dribbble"></i></a></li>
+							</ul>
+							</p>
+						</div>
+						<div class="col footer-col colorlib-widget">
+							<h4>Customer Care</h4>
+							<p>
+							<ul class="colorlib-footer-links">
+								<li><a href="#">Contact</a></li>
+								<li><a href="#">Returns/Exchange</a></li>
+								<li><a href="#">Gift Voucher</a></li>
+								<li><a href="#">Wishlist</a></li>
+								<li><a href="#">Special</a></li>
+								<li><a href="#">Customer Services</a></li>
+								<li><a href="#">Site maps</a></li>
+							</ul>
+							</p>
+						</div>
+						<div class="col footer-col colorlib-widget">
+							<h4>Information</h4>
+							<p>
+							<ul class="colorlib-footer-links">
+								<li><a href="#">About us</a></li>
+								<li><a href="#">Delivery Information</a></li>
+								<li><a href="#">Privacy Policy</a></li>
+								<li><a href="#">Support</a></li>
+								<li><a href="#">Order Tracking</a></li>
+							</ul>
+							</p>
+						</div>
+
+						<div class="col footer-col">
+							<h4>News</h4>
+							<ul class="colorlib-footer-links">
+								<li><a href="blog.html">Blog</a></li>
+								<li><a href="#">Press</a></li>
+								<li><a href="#">Exhibitions</a></li>
+							</ul>
+						</div>
+
+						<div class="col footer-col">
+							<h4>Contact Information</h4>
+							<ul class="colorlib-footer-links">
+								<li>291 South 21th Street, <br> Suite 721 New York NY 10016</li>
+								<li><a href="tel://1234567920">+ 1235 2355 98</a></li>
+								<li><a href="mailto:info@yoursite.com">info@yoursite.com</a></li>
+								<li><a href="#">yoursite.com</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="copy">
+					<div class="row">
+						<div class="col-sm-12 text-center">
+							<p>
+								<span><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+	Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved <i class="icon-heart" aria-hidden="true"></i> by 
+	<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></span> 
+								<span class="block">  , <a href="" target="_blank">mishnan c</a></span>
+							</p>
+						</div>
+					</div>
+				</div>
+			</footer>
+		</div>
+
+		<div class="gototop js-top">
+			<a href="#" class="js-gotop"><i class="ion-ios-arrow-up"></i></a>
+		</div>
+		<script>
+			function addSelect() {
+				console.log('-------------------------------');
+				const id = document.getElementById('address').value;
+				console.log(id);
+				document.getElementById('address_').value = id
+			}
+		</script>
+
+
+
+
+		<script>
+			function updateDiscount() {
+				console.log('--------------///////////////////------------');
+				const apply = $('#don').text();
+				const coupon = $('#coupon').val();
+				const grandTotal = $('#grandTotal').text();
+
+				$.ajax({
+					url: `/applyCoupon?coupon=${coupon}&grandTotal=${grandTotal}`,
+					type: 'post',
+					dataType: 'json',
+					contentType: 'application/json',
+					data: JSON.stringify({ coupon }),
+					success: (data) => {
+						console.log('------------------======================================= ');
+						if (data.message) {
+							Swal.fire({
+								icon: 'error',
+								title: 'Oops...',
+								text: `${data.message}`,
+							})
+						} else {
+							console.log(data, '-----------------');
+							$('#don').html(data.discount);
+							$('#allTotal').html(data.allTotal);
+							document.getElementById('aTotal').value = data.allTotal
+							document.getElementById('offer').value = data.discount
+						}
+					}
+				});
+			}
+
+		</script>
+
+
+		<script>
+			function addAddress() {
+				const street = document.getElementById("street").value
+				const city = document.getElementById("city").value
+				const state = document.getElementById("state").value
+				const zipCode = document.getElementById("zipCode").value
+
+				$.ajax({
+					url: `/addAddressChekout?street=${street}&city=${city}&state=${state}&zipCode=${zipCode}`,
+					type: 'post',
+					dataType: 'json',
+					contentType: 'application/json',
+					data: JSON.stringify({ street, city, state, zipCode }),
+					success: (data) => {
+						console.log('------------------======================================= ');
+						console.log(data);
+
+						document.getElementById("address_").value = `${data.street},${data.city},${data.state},${data.zipCode},`
+
+					}
+				});
+			}
+		</script>
+
+
+		<!-- jQuery -->
+		<script src="js/jquery.min.js"></script>
+		<!-- popper -->
+		<script src="js/popper.min.js"></script>
+		<!-- bootstrap 4.1 -->
+		<script src="js/bootstrap.min.js"></script>
+		<!-- jQuery easing -->
+		<script src="js/jquery.easing.1.3.js"></script>
+		<!-- Waypoints -->
+		<script src="js/jquery.waypoints.min.js"></script>
+		<!-- Flexslider -->
+		<script src="js/jquery.flexslider-min.js"></script>
+		<!-- Owl carousel -->
+		<script src="js/owl.carousel.min.js"></script>
+		<!-- Magnific Popup -->
+		<script src="js/jquery.magnific-popup.min.js"></script>
+		<script src="js/magnific-popup-options.js"></script>
+		<!-- Date Picker -->
+		<script src="js/bootstrap-datepicker.js"></script>
+		<!-- Stellar Parallax -->
+		<script src="js/jquery.stellar.min.js"></script>
+		<!-- Main -->
+		<script src="js/main.js"></script>
+
+		<script>
+		let copybtn = document.querySelector(".copybtn");
+
+
+            function copyIt() {
+                let copyInput = document.querySelector('#copyvalue');
+
+                copyInput.select();
+
+                document.execCommand("copy");
+
+                copybtn.textContent = "COPIED";
+            }
+
+</script>
+
+		<!-- <script>
+
+  </script>
+
+  
+
+	<script>
+	  Swal.fire({
+	icon: 'message',
+	title: 'Success!!',
+	text: 'juygtrgthyujgtre',
+  })
+  
+  </script> -->
+
+
+		<script src="sweetalert2.all.min.js"></script>
+
+	</body>
+
+	</html>
+
+	<% include('../layouts/footer.ejs') %>
