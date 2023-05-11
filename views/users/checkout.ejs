@@ -160,11 +160,13 @@
 
 
 
-					<h4>Add Address</h4>
+					<h4>Add New Address</h4>
 					<div class="row mb-3">
 						<label for="street" class="col-md-4 col-lg-3 col-form-label">street</label>
 						<div class="col-md-8 col-lg-9">
 							<input name="street" type="text" class="form-control" id="street" %>">
+							<span class="error text-danger" id="street-error"></span>
+
 						</div>
 					</div>
 
@@ -172,6 +174,8 @@
 						<label for="city" class="col-md-4 col-lg-3 col-form-label">city</label>
 						<div class="col-md-8 col-lg-9">
 							<input name="city" type="text" class="form-control" id="city">
+							<span class="error text-danger" id="city-error"></span>
+
 						</div>
 					</div>
 
@@ -179,6 +183,8 @@
 						<label for="state" class="col-md-4 col-lg-3 col-form-label">state</label>
 						<div class="col-md-8 col-lg-9">
 							<input name="state" type="text" class="form-control" id="state">
+							<span class="error text-danger" id="state-error"></span>
+
 						</div>
 					</div>
 
@@ -186,11 +192,13 @@
 						<label for="zipCode" class="col-md-4 col-lg-3 col-form-label">Zip code</label>
 						<div class="col-md-8 col-lg-9">
 							<input name="zipCode" type="text" class="form-control" id="zipCode">
+							<span class="error text-danger" id="zipCode-error"></span>
+
 						</div>
 					</div>
 
 					<div class="text-center">
-						<button onclick="addAddress()" type="button" class="btn btn-primary">Save </button>
+						<button onclick="validateForm()" type="button" class="btn btn-primary">Save </button>
 					</div>
 
 
@@ -348,8 +356,8 @@
 									<div class="col-md-12">
 										<div class="form-group">
 											<div class="radio">
-												<label><input type="radio" name="optradio"> </label>
-												<label><input type="radio" name="optradio"> </label>
+												<label><input type="hidden" name="optradio"> </label>
+												<label><input type="hidden" name="optradio"> </label>
 											</div>
 										</div>
 									</div>
@@ -601,6 +609,44 @@
 
 
 		<script>
+ function validateForm() {
+	const street = document.getElementById("street").value
+				const city = document.getElementById("city").value
+				const state = document.getElementById("state").value
+				const zipCode = document.getElementById("zipCode").value
+     var a=0;
+    if (street == "") {
+      document.getElementById("street-error").innerHTML = "Please enter a street.";
+      a++;
+    }
+
+    if (city == "") {
+      document.getElementById("city-error").innerHTML = "Please enter a city.";
+      a++;
+    }
+
+    if (state == "") {
+      document.getElementById("state-error").innerHTML = "Please enter a state.";
+      a++;
+    }
+
+    if (zipCode == "") {
+      document.getElementById("zipCode-error").innerHTML = "Please enter a zip code.";
+      a++;
+    }
+
+    // additional validation for zipCode can be added here
+
+    if(a==0){
+		document.getElementById("street-error").innerHTML = "";
+		document.getElementById("city-error").innerHTML = "";
+		document.getElementById("state-error").innerHTML = "";
+		document.getElementById("zipCode-error").innerHTML = "";
+
+
+		addAddress()	
+	}
+  }
 			function addAddress() {
 				const street = document.getElementById("street").value
 				const city = document.getElementById("city").value
@@ -614,10 +660,10 @@
 					contentType: 'application/json',
 					data: JSON.stringify({ street, city, state, zipCode }),
 					success: (data) => {
-						console.log('------------------======================================= ');
-						console.log(data);
 
+						
 						document.getElementById("address_").value = `${data.street},${data.city},${data.state},${data.zipCode},`
+						alert("Address added succesfully")
 
 					}
 				});

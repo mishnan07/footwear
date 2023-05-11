@@ -325,6 +325,7 @@ const editPassword = async (req, res) => {
 }
 const addAddress = async (req, res) => {
     try {
+        
         const id = req.session.user_id;
         const street = req.body.street;
         const city = req.body.city;
@@ -378,16 +379,21 @@ const addTowishList = async (req, res) => {
         const productID = req.query.id
         const productData = await Product.findOne({ _id: productID })
         const WishlistData = await Wishlist.findOne({ userId: userID })
-        console.log(productData);
+        const sameWishlistData = await Wishlist.findOne({ userId: userID,"item.product": productID })
+        if(!sameWishlistData){
         if (WishlistData) {
-            const updatecart = await Wishlist.updateOne({ userId: userID }, { $push: { item: [{ product: productData.id }] } })
-            res.redirect('/wishList')
+             const updatecart = await Wishlist.updateOne({ userId: userID }, { $push: { item: [{ product: productData.id }] } })
+            res.redirect('/wishList');
 
         } else {
             console.log("insert new");
             const insetcart = await Wishlist.insertMany({ userId: userID, item: [{ product: productData.id }] })
             res.redirect('/wishList')
         }
+    }else{
+        res.redirect('/wishList');
+
+    }
     } catch (error) {
         console.log(error.message);
 

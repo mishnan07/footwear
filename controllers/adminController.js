@@ -78,32 +78,11 @@ const verifyLogin = async (req, res) => {
 
 
 
-const loadDashboard = async (req, res) => {
-    try {
-
-
-        const orderData = await Order.find({ status: "Order Delivered" }).populate('userId')
-        let sum = 0
-
-        for (let i = 0; i < orderData.length; i++) {
-            sum = sum + parseInt(orderData[i].allTotal)
-        }
-        const Uid = mongoose.Types.ObjectId(orderData.userId);
-        const user = await User.find({})
-        const usersid = await Order.find({}, { userId: 1 });
-        const distinctUserIds = await Order.distinct("userId");
-        const userCount = distinctUserIds.length;
-        res.render('home', { orderData, sum, userCount });
-    } catch (error) {
-        console.log(error.message);
-    }
-}
 
 
 
 const filterDate = async (req, res) => {
     try {
-        console.log('1maaaaa');
 
         const startDate = new Date(req.query.startDate);
         const endDate = new Date(req.query.endDate);
@@ -199,7 +178,6 @@ const logout = async (req, res) => {
 module.exports = {
     loadLogin,
     verifyLogin,
-    loadDashboard,
     logout,
     loadlistUser,
     blockUser,

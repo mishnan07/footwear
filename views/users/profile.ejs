@@ -399,40 +399,43 @@
       <div style="height: 30px;width: 50px;"></div>
 
       <h4>Add Address</h4>
-                  <form action="/addAddress" method="post">
-                    <div class="row mb-3">
-                      <label for="street" class="col-md-4 col-lg-3 col-form-label">street</label>
-                      <div class="col-md-8 col-lg-9">
-                        <input name="street" type="text" class="form-control" id="street"   %>">
-                      </div>
-                    </div>
-
-                    <div class="row mb-3">
-                      <label for="city" class="col-md-4 col-lg-3 col-form-label">city</label>
-                      <div class="col-md-8 col-lg-9">
-                        <input name="city" type="text" class="form-control" id="city" >
-                      </div>
-                    </div>
-
-                    <div class="row mb-3">
-                      <label for="state" class="col-md-4 col-lg-3 col-form-label">state</label>
-                      <div class="col-md-8 col-lg-9">
-                        <input name="state" type="text" class="form-control" id="state" >
-                      </div>
-                    </div>
-
-                    <div class="row mb-3">
-                      <label for="zipCode" class="col-md-4 col-lg-3 col-form-label">Phone</label>
-                      <div class="col-md-8 col-lg-9">
-                        <input name="zipCode" type="text" class="form-control" id="zipCode" >
-                      </div>
-                    </div>
-
-                  <div class="text-center">
-                    <button type="submit" class="btn btn-primary">Save </button>
-                  </div>
-
-                </form>
+      <form id="form1" action="/addAddress" method="post" onsubmit="return validateForm()">
+        <div class="row mb-3">
+          <label for="street" class="col-md-4 col-lg-3 col-form-label">street</label>
+          <div class="col-md-8 col-lg-9">
+            <input name="street" type="text" class="form-control" id="street">
+            <span class="error text-danger" id="street-error"></span>
+          </div>
+        </div>
+      
+        <div class="row mb-3">
+          <label for="city" class="col-md-4 col-lg-3 col-form-label">city</label>
+          <div class="col-md-8 col-lg-9">
+            <input name="city" type="text" class="form-control" id="city">
+            <span class="error text-danger" id="city-error"></span>
+          </div>
+        </div>
+      
+        <div class="row mb-3">
+          <label for="state" class="col-md-4 col-lg-3 col-form-label">state</label>
+          <div class="col-md-8 col-lg-9">
+            <input name="state" type="text" class="form-control" id="state">
+            <span class="error text-danger" id="state-error"></span>
+          </div>
+        </div>
+      
+        <div class="row mb-3">
+          <label for="zipCode" class="col-md-4 col-lg-3 col-form-label">zipCode</label>
+          <div class="col-md-8 col-lg-9">
+            <input name="zipCode" type="text" class="form-control" id="zipCode">
+            <span class="error text-danger" id="zipCode-error"></span>
+          </div>
+        </div>
+      
+        <div class="text-center">
+          <button type="submit" class="btn btn-primary">Save </button>
+        </div>
+      </form>
                <% if(userSearchForVerify.address.length<0){%> 
                 <% for (let i = 0; i < 4; i++) { %>
                   <div class="row mb-3">
@@ -572,6 +575,39 @@
  <!-- Main -->
  <script src="/js/main.js"></script>
 
+ 
+ <script>
+  function validateForm() {
+    var street = document.forms["form1"]["street"].value;
+    var city = document.forms["form1"]["city"].value;
+    var state = document.forms["form1"]["state"].value;
+    var zipCode = document.forms["form1"]["zipCode"].value;
+
+    if (street == "") {
+      document.getElementById("street-error").innerHTML = "Please enter a street.";
+      return false;
+    }
+
+    if (city == "") {
+      document.getElementById("city-error").innerHTML = "Please enter a city.";
+      return false;
+    }
+
+    if (state == "") {
+      document.getElementById("state-error").innerHTML = "Please enter a state.";
+      return false;
+    }
+
+    if (zipCode == "") {
+      document.getElementById("zipCode-error").innerHTML = "Please enter a zip code.";
+      return false;
+    }
+
+    // additional validation for zipCode can be added here
+
+    return true;
+  }
+</script>
 
 
 </body>
